@@ -41,7 +41,7 @@ const PREDICT = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="First Name"
+                label="16_Last funding round raised amount"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.firstName}
@@ -54,7 +54,7 @@ const PREDICT = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Last Name"
+                label="age_of_company"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.lastName}
@@ -67,7 +67,7 @@ const PREDICT = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Email"
+                label="Amount of the last funding type"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.email}
@@ -80,7 +80,7 @@ const PREDICT = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Contact Number"
+                label="Companies Information, Level of Completeness"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.contact}
@@ -93,7 +93,7 @@ const PREDICT = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Address 1"
+                label="Stage, DA Classified_Early"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.address1}
@@ -106,7 +106,7 @@ const PREDICT = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Address 2"
+                label="number of founders"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.address2}
