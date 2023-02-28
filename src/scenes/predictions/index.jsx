@@ -379,7 +379,7 @@ const PREDICT = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Address 1"
+                label="Total Number of Venture Funding Rounds"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.address1}
@@ -392,7 +392,7 @@ const PREDICT = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Address 2"
+                label="Total Venture funding todate (disclosed)"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.address2}
@@ -405,7 +405,7 @@ const PREDICT = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Address 1"
+                label="Acquired"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.address1}
@@ -418,7 +418,7 @@ const PREDICT = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Address 2"
+                label="1. Grant"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.address2}
@@ -431,7 +431,7 @@ const PREDICT = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Address 1"
+                label="3. Early Venture"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.address1}
@@ -444,7 +444,7 @@ const PREDICT = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Address 2"
+                label="Sector_E-Commerce & Retail"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.address2}
@@ -457,7 +457,7 @@ const PREDICT = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Address 1"
+                label="4. Late Venture"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.address1}
@@ -470,7 +470,7 @@ const PREDICT = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Address 2"
+                label="5. Debt Financing"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.address2}
@@ -483,7 +483,7 @@ const PREDICT = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Address 1"
+                label="6.Private Equity"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.address1}
@@ -496,7 +496,7 @@ const PREDICT = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Address 2"
+                label="7. Offerings"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.address2}
@@ -509,20 +509,7 @@ const PREDICT = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Address 1"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.address1}
-                name="address1"
-                error={!!touched.address1 && !!errors.address1}
-                helperText={touched.address1 && errors.address1}
-                sx={{ gridColumn: "span 2" }}
-              />
-              <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="Address 2"
+                label="8. Exits"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.address2}
@@ -535,7 +522,7 @@ const PREDICT = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Address 1"
+                label="10.2_Number of Venture Funding rounds (#)"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.address1}
@@ -548,7 +535,7 @@ const PREDICT = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Address 2"
+                label="Stage, DA Classified_Mature"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.address2}
