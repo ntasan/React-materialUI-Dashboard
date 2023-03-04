@@ -44,7 +44,7 @@ const PREDICT = () => {
                 label="16_Last funding round raised amount"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.firstName}
+                value={values.Last_funding_round_raised_amount}
                 name="firstName"
                 error={!!touched.firstName && !!errors.firstName}
                 helperText={touched.firstName && errors.firstName}
@@ -57,7 +57,7 @@ const PREDICT = () => {
                 label="age_of_company"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.lastName}
+                value={values.age_of_company}
                 name="lastName"
                 error={!!touched.lastName && !!errors.lastName}
                 helperText={touched.lastName && errors.lastName}
@@ -70,7 +70,7 @@ const PREDICT = () => {
                 label="Amount of the last funding type"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.email}
+                value={values.Amount_of_the_last_funding_type}
                 name="email"
                 error={!!touched.email && !!errors.email}
                 helperText={touched.email && errors.email}
