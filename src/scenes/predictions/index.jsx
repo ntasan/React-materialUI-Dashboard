@@ -295,9 +295,9 @@ const PREDICT = () => {
             {result === "" ? null :
             (
             // <Row>
-              <Col className="result-container">
+              // <Col className="result-container">
                 <h5 id="result">{result}</h5>
-              </Col>
+              // </Col>
             // </Row>
             )
           }
@@ -328,9 +328,16 @@ const initialValues = {
   Last_funding_round_raised_amount: "",
   age_of_company: "",
   Amount_of_the_last_funding_type: "",
-  contact: "",
-  address1: "",
-  address2: "",
+  Companies_Information_Level_of_Completeness: "",
+  Stage_DA_Classified_Early: "",
+  number_of_founders: "",
+  number_of_bussiness_categories: "",
+  number_of_market_countires: "",
+  Female_Co_Founder: "",
+  Average_time_of_rounds: "",
+  number_of_investors: "",
+  Sector_Information_Technology: "",
+  Business_model_B2C: ""
 };
 
 export default PREDICT;
