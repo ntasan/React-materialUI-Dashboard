@@ -291,7 +291,7 @@ const PREDICT = () => {
                 {/* </Row> */}
             </Box>
 
-            <Box>
+            <Box display="flex" justifyContent="center" mt="20px">
             {result === "" ? null :
             (
             // <Row>
