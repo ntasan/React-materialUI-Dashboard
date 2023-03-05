@@ -22,7 +22,7 @@ const handlePredictClick = (event) => {
         'Content-Type': 'application/json'
         },
         method: 'POST',
-        body: JSON.stringify(formData)
+        body: JSON.stringify(values)
     })  //https://salty-reaches-05509.herokuapp.com/http://127.0.0.1:5000/prediction
     .then(response => response.json())
     .then(response => {
@@ -229,9 +229,30 @@ const handlePredictClick = (event) => {
               
             </Box>
             <Box display="flex" justifyContent="end" mt="20px">
-              <Button type="submit" color="secondary" variant="contained">
+              {/* <Button type="submit" color="secondary" variant="contained">
                 Predict
-              </Button>
+              </Button> */}
+
+               {/* <Row> */}
+                    {/* <Col> */}
+                        <Button
+                            block
+                            variant="success"
+                            disabled={isLoading}
+                            onClick={!isLoading ? handlePredictClick : null}>
+                            { isLoading ? 'Making prediction' : 'Predict' }
+                        </Button>
+                    {/* </Col> */}
+                    {/* <Col> */}
+                        <Button
+                            block
+                            variant="danger"
+                            disabled={isLoading}
+                            onClick={handleCancelClick}>
+                            Reset prediction
+                        </Button>
+                    {/* </Col> */}
+                {/* </Row> */}
             </Box>
           </form>
         )}
