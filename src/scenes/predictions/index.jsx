@@ -14,10 +14,20 @@ const PREDICT = () => {
 
   const [isLoading, setIsloading] = useState(false);
   const [values, setValues] = useState({
-        sepalLength: 4,
-        sepalWidth: 2,
-        petalLength: 1,
-        petalWidth: 0
+        Last_funding_round_raised_amount: 4,
+        age_of_company: 2,
+        Amount_of_the_last_funding_type: 1,
+        Companies_Information_Level_of_Completeness: 0,
+        Stage_DA_Classified_Early: 0,
+        number_of_founders: 0,
+        number_of_bussiness_categories: 0,
+        number_of_market_countires: 0,
+        Female_Co_Founder: 0,
+        Average_time_of_rounds: 0,
+        number_of_investors: 0,
+        Sector_Information_Technology: 0,
+        Business_model_B2C: 0
+
     });
 
   const [result, setResult] = useState("");
@@ -244,7 +254,7 @@ const PREDICT = () => {
                 label="Business_model_B2C"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.address1}
+                value={values.Business_model_B2C}
                 name="address1"
                 error={!!touched.address1 && !!errors.address1}
                 helperText={touched.address1 && errors.address1}
