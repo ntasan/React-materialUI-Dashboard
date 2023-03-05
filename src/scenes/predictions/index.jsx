@@ -11,25 +11,40 @@ const PREDICT = () => {
     console.log(values);
   };
 
-const handlePredictClick = (event) => {
-    //const proxyurl = "https://salty-reaches-05509.herokuapp.com/";
-    const url = "http://127.0.0.1:5000/prediction/";
-    setIsloading(true);
-    fetch(url,
-    {
-        headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-        },
-        method: 'POST',
-        body: JSON.stringify(values)
-    })  //https://salty-reaches-05509.herokuapp.com/http://127.0.0.1:5000/prediction
-    .then(response => response.json())
-    .then(response => {
-        setResult(response.result);
-        setIsloading(false);
-    });
-}
+  const [result, setResult] = useState("");
+
+
+  const handleChange = (event) => {
+      const value = event.target.value;
+      const name = event.target.name;
+      let inputData = {...values};
+      inputData[name]=value;
+      setFormData(inputData);
+    }
+
+    const handleCancelClick = (event) => {
+        setResult("");
+    }
+
+  const handlePredictClick = (event) => {
+      //const proxyurl = "https://salty-reaches-05509.herokuapp.com/";
+      const url = "http://127.0.0.1:5000/prediction/";
+      setIsloading(true);
+      fetch(url,
+      {
+          headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+          },
+          method: 'POST',
+          body: JSON.stringify(values)
+      })  //https://salty-reaches-05509.herokuapp.com/http://127.0.0.1:5000/prediction
+      .then(response => response.json())
+      .then(response => {
+          setResult(response.result);
+          setIsloading(false);
+      });
+  }
 
   return (
     <Box m="20px">
