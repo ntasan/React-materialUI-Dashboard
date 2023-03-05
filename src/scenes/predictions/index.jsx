@@ -34,20 +34,22 @@ const PREDICT = () => {
 
 
   const handleChange = (event) => {
-      const value = event.target.value;
-      const name = event.target.name;
-      let inputData = {...values};
-      inputData[name]=value;
-      setValues(inputData);
+    const value = event.target.value;
+    const name = event.target.name;
+    let inputData = {...values};
+    inputData[name]=value;
+    setValues(inputData);
     }
 
-    const handleCancelClick = (event) => {
-        setResult("");
-    }
+  const handleCancelClick = (event) => {
+      setResult("");
+  }
 
   const handlePredictClick = (event) => {
       //const proxyurl = "https://salty-reaches-05509.herokuapp.com/";
-      const url = "http://127.0.0.1:5000/prediction/";
+      // const url = "http://127.0.0.1:5000/prediction/";
+      const url = "http://127.0.0.1:41803/";
+
       setIsloading(true);
       fetch(url,
       {
@@ -126,8 +128,8 @@ const PREDICT = () => {
                 onChange={handleChange}
                 value={values.Amount_of_the_last_funding_type}
                 name="email"
-                error={!!touched.email && !!errors.email}
-                helperText={touched.email && errors.email}
+                error={!!touched.lastName && !!errors.lastName}
+                helperText={touched.lastName && errors.lastName}
                 sx={{ gridColumn: "span 2" }}
               />
               <TextField
@@ -139,8 +141,8 @@ const PREDICT = () => {
                 onChange={handleChange}
                 value={values.Companies_Information_Level_of_Completeness}
                 name="contact"
-                error={!!touched.contact && !!errors.contact}
-                helperText={touched.contact && errors.contact}
+                error={!!touched.lastName && !!errors.lastName}
+                helperText={touched.lastName && errors.lastName}
                 sx={{ gridColumn: "span 2" }}
               />
               <TextField
@@ -288,6 +290,18 @@ const PREDICT = () => {
                     {/* </Col> */}
                 {/* </Row> */}
             </Box>
+
+            <Box>
+            {result === "" ? null :
+            (
+            // <Row>
+              <Col className="result-container">
+                <h5 id="result">{result}</h5>
+              </Col>
+            // </Row>
+            )
+          }
+            </Box>
           </form>
             
         )}
@@ -311,9 +325,9 @@ const checkoutSchema = yup.object().shape({
   address2: yup.string().required("required"),
 });
 const initialValues = {
-  firstName: "",
-  lastName: "",
-  email: "",
+  Last_funding_round_raised_amount: "",
+  age_of_company: "",
+  Amount_of_the_last_funding_type: "",
   contact: "",
   address1: "",
   address2: "",
