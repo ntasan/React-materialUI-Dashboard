@@ -11,6 +11,26 @@ const PREDICT = () => {
     console.log(values);
   };
 
+const handlePredictClick = (event) => {
+    //const proxyurl = "https://salty-reaches-05509.herokuapp.com/";
+    const url = "http://127.0.0.1:5000/prediction/";
+    setIsloading(true);
+    fetch(url,
+    {
+        headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify(formData)
+    })  //https://salty-reaches-05509.herokuapp.com/http://127.0.0.1:5000/prediction
+    .then(response => response.json())
+    .then(response => {
+        setResult(response.result);
+        setIsloading(false);
+    });
+}
+
   return (
     <Box m="20px">
       <Header title="PREDICT" subtitle="Insert x variables " />
@@ -148,7 +168,7 @@ const PREDICT = () => {
                 label="Female_Co-Founder"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.Female_Co-Founder}
+                value={values.Female_Co_Founder}
                 name="address1"
                 error={!!touched.address1 && !!errors.address1}
                 helperText={touched.address1 && errors.address1}
@@ -161,7 +181,7 @@ const PREDICT = () => {
                 label="Average time of rounds(days)"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.Average_time_of_rounds(days)}
+                value={values.Average_time_of_rounds}
                 name="address2"
                 error={!!touched.address2 && !!errors.address2}
                 helperText={touched.address2 && errors.address2}
