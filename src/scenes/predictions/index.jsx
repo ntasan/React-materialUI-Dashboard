@@ -289,6 +289,7 @@ const PREDICT = () => {
                 {/* </Row> */}
             </Box>
           </form>
+            
         )}
       </Formik>
     </Box>
