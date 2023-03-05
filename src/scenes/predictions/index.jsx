@@ -83,7 +83,7 @@ const PREDICT = () => {
                 label="Companies Information, Level of Completeness"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.contact}
+                value={values.Companies_Information_Level_of_Completeness}
                 name="contact"
                 error={!!touched.contact && !!errors.contact}
                 helperText={touched.contact && errors.contact}
@@ -96,7 +96,7 @@ const PREDICT = () => {
                 label="Stage, DA Classified_Early"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.address1}
+                value={values.Stage_DA_Classified_Early}
                 name="address1"
                 error={!!touched.address1 && !!errors.address1}
                 helperText={touched.address1 && errors.address1}
@@ -109,7 +109,7 @@ const PREDICT = () => {
                 label="number of founders"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.address2}
+                value={values.number_of_founders}
                 name="address2"
                 error={!!touched.address2 && !!errors.address2}
                 helperText={touched.address2 && errors.address2}
@@ -122,7 +122,7 @@ const PREDICT = () => {
                 label="number of bussiness categories"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.address1}
+                value={values.number_of_bussiness_categories}
                 name="address1"
                 error={!!touched.address1 && !!errors.address1}
                 helperText={touched.address1 && errors.address1}
@@ -135,7 +135,7 @@ const PREDICT = () => {
                 label="number of market countires"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.address2}
+                value={values.number_of_market_countires}
                 name="address2"
                 error={!!touched.address2 && !!errors.address2}
                 helperText={touched.address2 && errors.address2}
@@ -148,7 +148,7 @@ const PREDICT = () => {
                 label="Female_Co-Founder"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.address1}
+                value={values.Female_Co-Founder}
                 name="address1"
                 error={!!touched.address1 && !!errors.address1}
                 helperText={touched.address1 && errors.address1}
@@ -161,7 +161,7 @@ const PREDICT = () => {
                 label="Average time of rounds(days)"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.address2}
+                value={values.Average_time_of_rounds(days)}
                 name="address2"
                 error={!!touched.address2 && !!errors.address2}
                 helperText={touched.address2 && errors.address2}
@@ -171,23 +171,10 @@ const PREDICT = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Sector_Financial Services"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.address1}
-                name="address1"
-                error={!!touched.address1 && !!errors.address1}
-                helperText={touched.address1 && errors.address1}
-                sx={{ gridColumn: "span 2" }}
-              />
-              <TextField
-                fullWidth
-                variant="filled"
-                type="text"
                 label="number of investors"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.address2}
+                value={values.number_of_investors}
                 name="address2"
                 error={!!touched.address2 && !!errors.address2}
                 helperText={touched.address2 && errors.address2}
@@ -200,23 +187,10 @@ const PREDICT = () => {
                 label="Sector_Information Technology"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.address1}
+                value={values.Sector_Information_Technology}
                 name="address1"
                 error={!!touched.address1 && !!errors.address1}
                 helperText={touched.address1 && errors.address1}
-                sx={{ gridColumn: "span 2" }}
-              />
-              <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="Stage, DA Classified_Growth"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.address2}
-                name="address2"
-                error={!!touched.address2 && !!errors.address2}
-                helperText={touched.address2 && errors.address2}
                 sx={{ gridColumn: "span 2" }}
               />
               <TextField
@@ -230,19 +204,6 @@ const PREDICT = () => {
                 name="address1"
                 error={!!touched.address1 && !!errors.address1}
                 helperText={touched.address1 && errors.address1}
-                sx={{ gridColumn: "span 2" }}
-              />
-              <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="number of other offices"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.address2}
-                name="address2"
-                error={!!touched.address2 && !!errors.address2}
-                helperText={touched.address2 && errors.address2}
                 sx={{ gridColumn: "span 2" }}
               />
               
