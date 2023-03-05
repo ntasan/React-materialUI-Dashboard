@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { Box, Button, TextField } from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
@@ -11,6 +12,14 @@ const PREDICT = () => {
     console.log(values);
   };
 
+  const [isLoading, setIsloading] = useState(false);
+  const [values, setValues] = useState({
+        sepalLength: 4,
+        sepalWidth: 2,
+        petalLength: 1,
+        petalWidth: 0
+    });
+
   const [result, setResult] = useState("");
 
 
@@ -19,7 +28,7 @@ const PREDICT = () => {
       const name = event.target.name;
       let inputData = {...values};
       inputData[name]=value;
-      setFormData(inputData);
+      setValues(inputData);
     }
 
     const handleCancelClick = (event) => {
