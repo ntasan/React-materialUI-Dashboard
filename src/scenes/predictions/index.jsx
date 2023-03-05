@@ -269,7 +269,7 @@ const PREDICT = () => {
 
                {/* <Row> */}
                     {/* <Col> */}
-                        <Button
+                        <Button  type="submit" color="secondary"
                             block
                             variant="success"
                             disabled={isLoading}
@@ -278,7 +278,7 @@ const PREDICT = () => {
                         </Button>
                     {/* </Col> */}
                     {/* <Col> */}
-                        <Button
+                        <Button color="secondary" 
                             block
                             variant="danger"
                             disabled={isLoading}
