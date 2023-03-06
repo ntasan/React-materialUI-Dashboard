@@ -13,7 +13,7 @@ const PREDICT = () => {
   };
 
   const [isLoading, setIsloading] = useState(false);
-  const [values, setValues] = useState({
+  const [formData, setformData] = useState({
         Last_funding_round_raised_amount: 4,
         age_of_company: 2,
         Amount_of_the_last_funding_type: 1,
@@ -35,9 +35,7 @@ const PREDICT = () => {
 
   const handleChange = (event) => {
     const value = event.target.value;
-    const name = event.target.name;
     let inputData = {...values};
-    inputData[name]=value;
     setValues(inputData);
     };
 
@@ -47,8 +45,9 @@ const PREDICT = () => {
 
   const handlePredictClick = (event) => {
       //const proxyurl = "https://salty-reaches-05509.herokuapp.com/";
-      // const url = "http://127.0.0.1:5000/predict/";
-      const url = "http://127.0.0.1:35337/predict/";
+      
+      const url = "http://127.0.0.1:42707/predict/";
+
 
 
       setIsloading(true);
@@ -59,7 +58,7 @@ const PREDICT = () => {
           'Content-Type': 'application/json'
           },
           method: 'POST',
-          body: JSON.stringify(values)
+          body: JSON.stringify(formData)
       })  //https://salty-reaches-05509.herokuapp.com/http://127.0.0.1:5000/prediction
       .then(response => response.json())
       .then(response => {
@@ -79,7 +78,7 @@ const PREDICT = () => {
         validationSchema={checkoutSchema}
       >
         {({
-          values,
+          formData,
           errors,
           touched,
           handleBlur,
@@ -103,7 +102,7 @@ const PREDICT = () => {
                 label="16_Last funding round raised amount"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.Last_funding_round_raised_amount}
+                value={formData.Last_funding_round_raised_amount}
                 name="firstName"
                 error={!!touched.firstName && !!errors.firstName}
                 helperText={touched.firstName && errors.firstName}
@@ -116,7 +115,7 @@ const PREDICT = () => {
                 label="age_of_company"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.age_of_company}
+                value={formData.age_of_company}
                 name="lastName"
                 error={!!touched.lastName && !!errors.lastName}
                 helperText={touched.lastName && errors.lastName}
@@ -129,7 +128,7 @@ const PREDICT = () => {
                 label="Amount of the last funding type"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.Amount_of_the_last_funding_type}
+                value={formData.Amount_of_the_last_funding_type}
                 name="email"
                 error={!!touched.lastName && !!errors.lastName}
                 helperText={touched.lastName && errors.lastName}
@@ -142,7 +141,7 @@ const PREDICT = () => {
                 label="Companies Information, Level of Completeness"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.Companies_Information_Level_of_Completeness}
+                value={formData.Companies_Information_Level_of_Completeness}
                 name="contact"
                 error={!!touched.lastName && !!errors.lastName}
                 helperText={touched.lastName && errors.lastName}
@@ -155,7 +154,7 @@ const PREDICT = () => {
                 label="Stage, DA Classified_Early"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.Stage_DA_Classified_Early}
+                value={formData.Stage_DA_Classified_Early}
                 name="address1"
                 error={!!touched.address1 && !!errors.address1}
                 helperText={touched.address1 && errors.address1}
@@ -168,7 +167,7 @@ const PREDICT = () => {
                 label="number of founders"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.number_of_founders}
+                value={formData.number_of_founders}
                 name="address2"
                 error={!!touched.address2 && !!errors.address2}
                 helperText={touched.address2 && errors.address2}
@@ -181,7 +180,7 @@ const PREDICT = () => {
                 label="number of bussiness categories"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.number_of_bussiness_categories}
+                value={formData.number_of_bussiness_categories}
                 name="address1"
                 error={!!touched.address1 && !!errors.address1}
                 helperText={touched.address1 && errors.address1}
@@ -194,7 +193,7 @@ const PREDICT = () => {
                 label="number of market countires"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.number_of_market_countires}
+                value={formData.number_of_market_countires}
                 name="address2"
                 error={!!touched.address2 && !!errors.address2}
                 helperText={touched.address2 && errors.address2}
@@ -207,7 +206,7 @@ const PREDICT = () => {
                 label="Female_Co-Founder"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.Female_Co_Founder}
+                value={formData.Female_Co_Founder}
                 name="address1"
                 error={!!touched.address1 && !!errors.address1}
                 helperText={touched.address1 && errors.address1}
@@ -220,7 +219,7 @@ const PREDICT = () => {
                 label="Average time of rounds(days)"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.Average_time_of_rounds}
+                value={formData.Average_time_of_rounds}
                 name="address2"
                 error={!!touched.address2 && !!errors.address2}
                 helperText={touched.address2 && errors.address2}
@@ -233,7 +232,7 @@ const PREDICT = () => {
                 label="number of investors"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.number_of_investors}
+                value={formData.number_of_investors}
                 name="address2"
                 error={!!touched.address2 && !!errors.address2}
                 helperText={touched.address2 && errors.address2}
@@ -246,7 +245,7 @@ const PREDICT = () => {
                 label="Sector_Information Technology"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.Sector_Information_Technology}
+                value={formData.Sector_Information_Technology}
                 name="address1"
                 error={!!touched.address1 && !!errors.address1}
                 helperText={touched.address1 && errors.address1}
@@ -259,7 +258,7 @@ const PREDICT = () => {
                 label="Business_model_B2C"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.Business_model_B2C}
+                value={formData.Business_model_B2C}
                 name="address1"
                 error={!!touched.address1 && !!errors.address1}
                 helperText={touched.address1 && errors.address1}
