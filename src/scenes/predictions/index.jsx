@@ -39,16 +39,17 @@ const PREDICT = () => {
     let inputData = {...values};
     inputData[name]=value;
     setValues(inputData);
-    }
+    };
 
   const handleCancelClick = (event) => {
       setResult("");
-  }
+  };
 
   const handlePredictClick = (event) => {
       //const proxyurl = "https://salty-reaches-05509.herokuapp.com/";
-      // const url = "http://127.0.0.1:5000/prediction/";
-      const url = "http://127.0.0.1:41803/";
+      // const url = "http://127.0.0.1:5000/predict/";
+      const url = "http://127.0.0.1:35337/predict/";
+
 
       setIsloading(true);
       fetch(url,
@@ -65,7 +66,7 @@ const PREDICT = () => {
           setResult(response.result);
           setIsloading(false);
       });
-  }
+  };
 
   return (
     <Box m="20px">
@@ -73,6 +74,7 @@ const PREDICT = () => {
 
       <Formik
         onSubmit={handleFormSubmit}
+        onChange={handleChange}
         initialValues={initialValues}
         validationSchema={checkoutSchema}
       >
@@ -82,6 +84,7 @@ const PREDICT = () => {
           touched,
           handleBlur,
           handleChange,
+          initialValues,
           handleSubmit,
         }) => (
           <form onSubmit={handleSubmit}>
@@ -325,19 +328,19 @@ const checkoutSchema = yup.object().shape({
   address2: yup.string().required("required"),
 });
 const initialValues = {
-  Last_funding_round_raised_amount: "",
-  age_of_company: "",
-  Amount_of_the_last_funding_type: "",
-  Companies_Information_Level_of_Completeness: "",
-  Stage_DA_Classified_Early: "",
-  number_of_founders: "",
-  number_of_bussiness_categories: "",
-  number_of_market_countires: "",
-  Female_Co_Founder: "",
-  Average_time_of_rounds: "",
-  number_of_investors: "",
-  Sector_Information_Technology: "",
-  Business_model_B2C: ""
+  Last_funding_round_raised_amount: "1000000",
+  age_of_company: "2",
+  Amount_of_the_last_funding_type: "7800",
+  Companies_Information_Level_of_Completeness: "2",
+  Stage_DA_Classified_Early: "344",
+  number_of_founders: "4",
+  number_of_bussiness_categories: "5",
+  number_of_market_countires: "3",
+  Female_Co_Founder: "2",
+  Average_time_of_rounds: "4",
+  number_of_investors: "2",
+  Sector_Information_Technology: "5",
+  Business_model_B2C: "1"
 };
 
 export default PREDICT;
