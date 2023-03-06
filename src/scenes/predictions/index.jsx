@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Component } from 'react';
 import { Box, Button, TextField } from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
@@ -6,7 +6,25 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../../components/Header";
 
 const PREDICT = () => {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isLoading: false,
+      formData: {
+        textfield1: '',
+        textfield2: '',
+        select1: 1,
+        select2: 1,
+        select3: 1
+      },
+      result: ""
+    };
+  }
+
   const isNonMobile = useMediaQuery("(min-width:600px)");
+
 
   const handleFormSubmit = (values) => {
     console.log(values);
