@@ -33,8 +33,8 @@ const PREDICT = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
 
 
-  const handleFormSubmit = (values) => {
-    console.log(values);
+  const handleFormSubmit = (formData) => {
+    console.log(formData);
   };
 
   const [isLoading, setIsloading] = useState(false);
@@ -65,7 +65,7 @@ const PREDICT = () => {
     }
     else newData[e.target.id] = e.target.value
     setFormData(newData)
-    
+
   }
 
 
@@ -111,7 +111,7 @@ const PREDICT = () => {
       <Formik
         onSubmit={handleFormSubmit}
         onChange={handleChange}
-        initialValues={initialValues}
+        // initialValues={initialValues}
         validationSchema={checkoutSchema}
       >
         {({
@@ -363,20 +363,20 @@ const checkoutSchema = yup.object().shape({
   address1: yup.string().required("required"),
   address2: yup.string().required("required"),
 });
-const initialValues = {
-  Last_funding_round_raised_amount: "1000000",
-  age_of_company: "2",
-  Amount_of_the_last_funding_type: "7800",
-  Companies_Information_Level_of_Completeness: "2",
-  Stage_DA_Classified_Early: "344",
-  number_of_founders: "4",
-  number_of_bussiness_categories: "5",
-  number_of_market_countires: "3",
-  Female_Co_Founder: "2",
-  Average_time_of_rounds: "4",
-  number_of_investors: "2",
-  Sector_Information_Technology: "5",
-  Business_model_B2C: "1"
-};
+// const initialValues = {
+//   Last_funding_round_raised_amount: "1000000",
+//   age_of_company: "2",
+//   Amount_of_the_last_funding_type: "7800",
+//   Companies_Information_Level_of_Completeness: "2",
+//   Stage_DA_Classified_Early: "344",
+//   number_of_founders: "4",
+//   number_of_bussiness_categories: "5",
+//   number_of_market_countires: "3",
+//   Female_Co_Founder: "2",
+//   Average_time_of_rounds: "4",
+//   number_of_investors: "2",
+//   Sector_Information_Technology: "5",
+//   Business_model_B2C: "1"
+// };
 
 export default PREDICT;
