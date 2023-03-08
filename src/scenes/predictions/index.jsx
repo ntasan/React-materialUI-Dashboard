@@ -1,4 +1,4 @@
-import React, { useState, Component } from 'react';
+import React, { useState } from 'react';
 import { Box, Button, TextField } from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
@@ -7,21 +7,28 @@ import Header from "../../components/Header";
 
 const PREDICT = () => {
 
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
 
-    this.state = {
-      isLoading: false,
-      formData: {
-        textfield1: '',
-        textfield2: '',
-        select1: 1,
-        select2: 1,
-        select3: 1
-      },
-      result: ""
-    };
-  }
+  //   this.state = {
+  //     isLoading: false,
+  //     formData: {
+  //       Last_funding_round_raised_amount: '',
+  //       age_of_company: '',
+  //       Amount_of_the_last_funding_type: 1,
+  //       Companies_Information_Level_of_Completeness: 1,
+  //       number_of_founders: 1,
+  //       number_of_bussiness_categories: '',
+  //       number_of_market_countires: '',
+  //       Female_Co_Founder: '',
+  //       Average_time_of_rounds: '',
+  //       number_of_investors: '',
+  //       Sector_Information_Technology: '',
+  //       Business_model_B2C: ''
+  //     },
+  //     result: ""
+  //   };
+  // }
 
   const isNonMobile = useMediaQuery("(min-width:600px)");
 
@@ -31,31 +38,43 @@ const PREDICT = () => {
   };
 
   const [isLoading, setIsloading] = useState(false);
-  const [formData, setformData] = useState({
-        Last_funding_round_raised_amount: 4,
-        age_of_company: 2,
-        Amount_of_the_last_funding_type: 1,
-        Companies_Information_Level_of_Completeness: 0,
-        Stage_DA_Classified_Early: 0,
-        number_of_founders: 0,
-        number_of_bussiness_categories: 0,
-        number_of_market_countires: 0,
-        Female_Co_Founder: 0,
-        Average_time_of_rounds: 0,
+  const [formData, setFormData] = useState({
+        Last_funding_round_raised_amount: "",
+        age_of_company: "",
+        Amount_of_the_last_funding_type: "",
+        Companies_Information_Level_of_Completeness: "",
+        Stage_DA_Classified_Early: "",
+        number_of_founders: "",
+        number_of_bussiness_categories: "",
+        number_of_market_countires: "",
+        Female_Co_Founder: "",
+        Average_time_of_rounds: "",
         number_of_investors: 0,
-        Sector_Information_Technology: 0,
-        Business_model_B2C: 0
+        Sector_Information_Technology: "",
+        Business_model_B2C: ""
 
-    });
+  });
 
   const [result, setResult] = useState("");
 
+  const handleChange = (e, changeKey=undefined) => {
+    // console.log(changeKey, e.target.value)
+    let newData = {...formData}
+    if(changeKey) {
+        newData[changeKey] = e.target.value
+    }
+    else newData[e.target.id] = e.target.value
+    setFormData(newData)
+    
+  }
 
-  const handleChange = (event) => {
-    const value = event.target.value;
-    let inputData = {...values};
-    setValues(inputData);
-    };
+
+
+  // const handleChange = (event) => {
+  //   const value = event.target.value;
+  //   let inputData = {...formData};
+  //   setFormData(inputData);
+  //   };
 
   const handleCancelClick = (event) => {
       setResult("");
